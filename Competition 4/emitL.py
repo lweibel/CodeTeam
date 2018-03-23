@@ -8,4 +8,7 @@ for t in range(T):
     # you have to be careful when using just list(letter_count.values()), as the order is not guaranteed
     lc_list = [letter_count['L'], letter_count['T'], letter_count['I'], letter_count['M'], letter_count['E']]
     # would be nice to write lc_list >= [2, 2, 2, 2, 2], but list comparison does not work like this
-    print('YES') if all(count >= 2 for count in lc_list) or lc_list == [2, 2, 2, 2, 1] else print('NO')
+    if all(count >= 2 for count in lc_list) or (lc_list == [2, 2, 2, 2, 1] and len(S) == 9):
+        print('YES')
+    else:
+        print('NO')
